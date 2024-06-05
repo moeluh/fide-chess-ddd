@@ -1,9 +1,4 @@
 ﻿using Domain.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Domain.ValueObjects
 {
@@ -12,9 +7,16 @@ namespace Domain.ValueObjects
         Position position { get; }
         Color color { get; }
 
+        public Field(Position position, Color color)
+        {
+            this.position = position;
+            this.color = color;
+        }
+
         protected override IEnumerable<object> GetAtomicValues()
         {
-            throw new NotImplementedException();
+            yield return position;
+            yield return color;
         }
     }
 }

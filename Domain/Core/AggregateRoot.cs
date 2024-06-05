@@ -94,6 +94,6 @@ namespace Domain.Core
         /// <param name="domainEevent">The event to handle.</param>
         /// <remarks>Because the parameter type of the specified event is dynamic, 
         /// the appropriate overload of the When method is called.</remarks>
-        protected abstract void When(DomainEvent domainEvent);
+        protected abstract void When(dynamic domainEvent);
     }
 }

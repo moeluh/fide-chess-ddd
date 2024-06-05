@@ -3,11 +3,11 @@ using Domain.ValueObjects;
 
 namespace Domain.Events
 {
-    public class GameJoinedEvent : DomainEvent
+    public class GameCreatedEvent : DomainEvent
     {
         public Player player { get; }
 
-        public GameJoinedEvent(Player player)
+        public GameCreatedEvent(Player player)
         {
             this.player = player;
         }

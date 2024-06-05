@@ -2,7 +2,8 @@
 
 namespace Domain.Events
 {
-    internal class GameStartedEvent : DomainEvent
+    public class GameStartedEvent : DomainEvent
     {
+
     }
 }

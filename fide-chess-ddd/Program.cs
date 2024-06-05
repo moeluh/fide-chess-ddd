@@ -5,4 +5,5 @@ Console.WriteLine("Hello, World!");
 
 
 Game game = new Game(Guid.NewGuid());
-game.AssignColors();
+game.CreateGame(new Domain.ValueObjects.Player());
+game.JoinGame(new Domain.ValueObjects.Player());

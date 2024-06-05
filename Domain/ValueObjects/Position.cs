@@ -1,17 +1,22 @@
 ﻿using Domain.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Domain.ValueObjects
 {
-    internal class Position : ValueObject
+    public class Position : ValueObject
     {
+        public string x { get; private set; }
+        public int y { get; private set; }
+
+        public Position(string x, int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
+
         protected override IEnumerable<object> GetAtomicValues()
         {
-            throw new NotImplementedException();
+            yield return x;
+            yield return y;
         }
     }
 }

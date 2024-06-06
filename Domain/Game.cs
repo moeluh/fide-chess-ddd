@@ -7,11 +7,11 @@ namespace Domain
 {
     public class Game : AggregateRoot<Guid>
     {
-        private Player player1;
-        private Player player2;
-        private Board board;
+        private Player Player1;
+        private Player Player2;
+        private Board Board;
 
-        public Game(Guid id): base(id)
+        public Game(Guid id) : base(id)
         {
         }
 
@@ -23,7 +23,7 @@ namespace Domain
 
         private void When(GameCreatedEvent domainEvent)
         {
-            player1 = domainEvent.player;
+            Player1 = domainEvent.Player;
         }
 
         public void JoinGame(Player player)
@@ -34,7 +34,7 @@ namespace Domain
 
         private void When(GameJoinedEvent domainEvent)
         {
-            player2 = domainEvent.player;
+            Player2 = domainEvent.Player;
             AssignColors();
         }
 
@@ -46,8 +46,8 @@ namespace Domain
 
         private void When(ColorAssignedEvent domainEvent)
         {
-            player1.SetColor(domainEvent.Player1Color);
-            player2.SetColor(domainEvent.Player2Color);
+            Player1.SetColor(domainEvent.Player1Color);
+            Player2.SetColor(domainEvent.Player2Color);
             StartGame();
         }
 
@@ -59,7 +59,7 @@ namespace Domain
 
         private void When(GameStartedEvent domainEvent)
         {
-            board = new Board(Id);
+            Board = new Board(Id);
         }
 
         protected override void When(dynamic domainEvent)

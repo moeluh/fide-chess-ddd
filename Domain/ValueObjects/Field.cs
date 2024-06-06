@@ -2,21 +2,21 @@
 
 namespace Domain.ValueObjects
 {
-    internal class Field : ValueObject
+    public class Field : ValueObject
     {
-        Position position { get; }
-        Color color { get; }
+        Position Position { get; }
+        Color Color { get; }
 
         public Field(Position position, Color color)
         {
-            this.position = position;
-            this.color = color;
+            Position = position;
+            Color = color;
         }
 
         protected override IEnumerable<object> GetAtomicValues()
         {
-            yield return position;
-            yield return color;
+            yield return Position;
+            yield return Color;
         }
     }
 }

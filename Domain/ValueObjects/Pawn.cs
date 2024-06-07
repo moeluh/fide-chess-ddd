@@ -1,13 +1,6 @@
-﻿using Domain.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Domain.ValueObjects
+﻿namespace Domain.ValueObjects
 {
-    internal class Pawn : ValueObject
+    internal class Pawn : Piece
     {
         protected override IEnumerable<object> GetAtomicValues()
         {

@@ -4,8 +4,9 @@ namespace Domain.ValueObjects
 {
     internal class Field : ValueObject
     {
-        Position position { get; }
-        Color color { get; }
+        public Position position { get; }
+        public Color color { get; }
+        public Piece? piece { get; private set; }
 
         public Field(Position position, Color color)
         {
@@ -17,6 +18,11 @@ namespace Domain.ValueObjects
         {
             yield return position;
             yield return color;
+        }
+
+        public void SetPiece(Piece piece)
+        {
+            this.piece = piece;
         }
     }
 }

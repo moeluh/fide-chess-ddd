@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Domain.Core
+﻿namespace Domain.Core
 {
     /// <summary>
     /// Represents an aggregate-root of a domain aggregate (DDD). An aggregate-root is always an entity.

@@ -40,7 +40,10 @@ namespace Domain
 
         public void AssignColors()
         {
-            var @event = new ColorAssignedEvent(Color.White, Color.Black);
+            var random = new Random();
+            var player1Color = (Color)random.Next(2);
+            var player2Color = player1Color == Color.White ? Color.Black : Color.White;
+            var @event = new ColorAssignedEvent(player1Color, player2Color);
             RaiseEvent(@event);
         }
 

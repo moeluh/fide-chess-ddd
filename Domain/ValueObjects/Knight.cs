@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain.ValueObjects
 {
-    internal class Knight : ValueObject
+    internal class Knight : Piece
     {
         protected override IEnumerable<object> GetAtomicValues()
         {

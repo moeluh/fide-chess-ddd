@@ -1,13 +1,6 @@
-﻿using Domain.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Domain.ValueObjects
+﻿namespace Domain.ValueObjects
 {
-    internal class Bishop : ValueObject
+    internal class Bishop : Piece
     {
         protected override IEnumerable<object> GetAtomicValues()
         {

@@ -4,9 +4,9 @@ namespace Domain.ValueObjects
 {
     public class Field : ValueObject
     {
-        public Position position { get; }
-        public Color color { get; }
-        public Piece? piece { get; private set; }
+        public Position Position { get; }
+        public Color Color { get; }
+        public Piece? Piece { get; private set; }
 
         public Field(Position position, Color color)
         {
@@ -22,7 +22,7 @@ namespace Domain.ValueObjects
 
         public void SetPiece(Piece piece)
         {
-            this.piece = piece;
+            Piece = piece;
         }
     }
 }

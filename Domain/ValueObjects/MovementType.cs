@@ -6,5 +6,6 @@
         Diagonal = 1,
         Leap = 2,
         Pawn = 3,
+        Queen = 4
     }
 }

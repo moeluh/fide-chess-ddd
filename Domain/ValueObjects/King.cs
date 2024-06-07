@@ -2,9 +2,8 @@
 {
     public class King : Piece
     {
-        public King(Color color) :base(color, MovementType.HorizontalVertical, 1)
+        public King(Color color) : base(color, MovementType.HorizontalVertical, 1)
         {
-
         }
 
         protected override IEnumerable<object> GetAtomicValues()

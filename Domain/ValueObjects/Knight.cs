@@ -1,14 +1,11 @@
-﻿using Domain.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Domain.ValueObjects
+﻿namespace Domain.ValueObjects
 {
     internal class Knight : Piece
     {
+        public Knight(Color color) : base(color, MovementType.Leap, 3)
+        {
+        }
+
         protected override IEnumerable<object> GetAtomicValues()
         {
             throw new NotImplementedException();

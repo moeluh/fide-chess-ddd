@@ -2,7 +2,7 @@
 {
     public class Rook : Piece
     {
-        public Rook(Color color): base(color, MovementType.HorizontalVertical, 8)
+        public Rook(Color color) : base(color, MovementType.HorizontalVertical, 7)
         {
         }
 

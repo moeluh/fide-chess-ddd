@@ -4,19 +4,19 @@ namespace Domain.ValueObjects
 {
     public class Move : ValueObject
     {
-        public Position StartPosition { get; }
-        public Position EndPosition { get; }
+        public Field StartField { get; }
+        public Field EndField { get; }
 
-        public Move(Position startPosition, Position endPosition)
+        public Move(Field startField, Field endField)
         {
-            StartPosition = startPosition;
-            EndPosition = endPosition;
+            StartField = startField;
+            EndField = endField;
         }
 
         protected override IEnumerable<object> GetAtomicValues()
         {
-            yield return StartPosition;
-            yield return EndPosition;
+            yield return StartField;
+            yield return EndField;
         }
     }
 }

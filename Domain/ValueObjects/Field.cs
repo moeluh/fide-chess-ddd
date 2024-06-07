@@ -2,7 +2,7 @@
 
 namespace Domain.ValueObjects
 {
-    internal class Field : ValueObject
+    public class Field : ValueObject
     {
         public Position position { get; }
         public Color color { get; }
@@ -10,14 +10,14 @@ namespace Domain.ValueObjects
 
         public Field(Position position, Color color)
         {
-            this.position = position;
-            this.color = color;
+            Position = position;
+            Color = color;
         }
 
         protected override IEnumerable<object> GetAtomicValues()
         {
-            yield return position;
-            yield return color;
+            yield return Position;
+            yield return Color;
         }
 
         public void SetPiece(Piece piece)

@@ -5,11 +5,11 @@ namespace Domain.Events
 {
     public class GameCreatedEvent : DomainEvent
     {
-        public Player player { get; }
+        public Player Player { get; }
 
         public GameCreatedEvent(Player player)
         {
-            this.player = player;
+            Player = player;
         }
     }
 }

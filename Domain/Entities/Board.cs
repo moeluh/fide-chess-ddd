@@ -7,30 +7,30 @@ namespace Domain.Entities
     {
         const string X_CHARACTERS = "ABCDEFGH";
 
-        Field[,] fields;
+        Field[,] Fields;
 
 
         public Board(Guid id) : base(id)
         {
-            setFields();
-            setPieces();
+            SetFields();
+            SetPieces();
         }
 
-        private void setPieces()
+        private void SetPieces()
         {
-            
+
         }
 
-        private void setFields()
+        private void SetFields()
         {
-            fields = new Field[7, 7];
+            Fields = new Field[7, 7];
             Color color = Color.Black;
             for (int x = 0; x < 7; x++)
             {
                 for (int y = 0; y < 7; y++)
                 {
                     // TODO Fix Color
-                    fields[x, y] = new Field(new Position(X_CHARACTERS[x].ToString(), y), color);
+                    Fields[x, y] = new Field(new Position(X_CHARACTERS[x].ToString(), y), color);
 
                 }
             }

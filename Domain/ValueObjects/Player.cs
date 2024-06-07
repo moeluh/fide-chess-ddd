@@ -5,16 +5,16 @@ namespace Domain.ValueObjects
 {
     public class Player : ValueObject
     {
-        public Color color { get; private set; }
+        public Color Color { get; private set; }
 
         protected override IEnumerable<object> GetAtomicValues()
         {
-            yield return color;
+            yield return Color;
         }
 
         public void SetColor(Color color)
         {
-            this.color = color;
+            Color = color;
         }
     }
 }

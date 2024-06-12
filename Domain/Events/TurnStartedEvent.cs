@@ -1,13 +1,13 @@
 ﻿using Domain.Core;
 using Domain.ValueObjects;
 
-namespace Domain.Entities
+namespace Domain.Events
 {
-    public class Turn : Entity<Guid>
+    public  class TurnStartedEvent : DomainEvent
     {
         public Player Player { get; private set; }
 
-        public Turn(Guid id, Player player) : base(id)
+        public TurnStartedEvent(Player player)
         {
             Player = player;
         }

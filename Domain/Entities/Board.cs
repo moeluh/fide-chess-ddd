@@ -1,5 +1,8 @@
 ﻿using Domain.Core;
 using Domain.ValueObjects;
+using System.Drawing;
+using System.Runtime.CompilerServices;
+using Color = Domain.ValueObjects.Color;
 
 namespace Domain.Entities
 {
@@ -25,12 +28,11 @@ namespace Domain.Entities
         private void SetFields()
         {
             Fields = new Field[7, 7];
-            Color color = Color.Black;
             for (int x = 0; x < 7; x++)
             {
                 for (int y = 0; y < 7; y++)
                 {
-                    // TODO Fix Color
+                    var color = DetermineFieldColor(x, y);
                     Fields[x, y] = new Field(new Position(X_CHARACTERS[x].ToString(), y), color);
 
                 }
@@ -53,6 +55,18 @@ namespace Domain.Entities
             }
         }
 
-
+        private Color DetermineFieldColor(int x, int y)
+        {
+            var evenX = x % 2;
+            var evenY = y % 2;
+            if (evenX == 0 && evenY == 0 || evenX == 1 && evenY == 0)
+            {
+                return Color.Black;
+            } 
+            else
+            {
+                return Color.White;
+            }
+        }
     }
 }

@@ -10,6 +10,7 @@ namespace Domain
         private Player Player1;
         private Player Player2;
         private Board Board;
+        private Turn? currentTurn;
 
         public Game(Guid id) : base(id)
         {
@@ -63,6 +64,28 @@ namespace Domain
         private void When(GameStartedEvent domainEvent)
         {
             Board = new Board(Id);
+            StartTurn();
+        }
+
+        public void StartTurn()
+        {
+            TurnStartedEvent @event;
+            if (currentTurn == null)
+            {
+                var startPlayer = Player1.Color == Color.White ? Player1 : Player2;
+                @event = new TurnStartedEvent(startPlayer);
+            }
+            else
+            {
+                var newTurnPlayer = currentTurn.Player.Equals(Player1) ? Player2 : Player1;
+                @event = new TurnStartedEvent(newTurnPlayer);
+            }
+            RaiseEvent(@event);
+        }
+
+        private void When(TurnStartedEvent domainEvent)
+        {
+            currentTurn = new Turn(Guid.NewGuid(), domainEvent.Player);
         }
 
         protected override void When(dynamic domainEvent)

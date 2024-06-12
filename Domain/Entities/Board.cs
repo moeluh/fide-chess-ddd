@@ -18,7 +18,8 @@ namespace Domain.Entities
 
         private void SetPieces()
         {
-
+            SetWhitePawns();
+            SetBlackPawns();
         }
 
         private void SetFields()
@@ -35,5 +36,23 @@ namespace Domain.Entities
                 }
             }
         }
+
+        private void SetWhitePawns()
+        {
+            for(int x = 0;x < 7; x++)
+            {
+                Fields[x, 1].SetPiece(new Pawn(Color.White));
+            }
+        }
+
+        private void SetBlackPawns()
+        {
+            for (int x = 0; x < 7; x++)
+            {
+                Fields[x, 6].SetPiece(new Pawn(Color.Black));
+            }
+        }
+
+
     }
 }
